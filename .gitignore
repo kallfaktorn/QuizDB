@@ -1,0 +1,9 @@
+
+node_modules/
+frontend/README.md
+frontend/package-lock.json
+config/database.js
+frontend/.gitignore
+frontend/app/helpers/.gitkeep
+frontend/app/controllers/.gitkeep
+frontend/app/components/.gitkeep

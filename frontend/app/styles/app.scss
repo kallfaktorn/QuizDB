@@ -1,0 +1,49 @@
+// app.scss
+
+// Define desired color palettes.
+$primary: "blue-grey";
+$accent: "light-green";
+$warn: "pink";
+
+$login: "green";
+$signUp: "blue";
+
+
+// If desired, import the palettes and modify to your liking.
+@import "color-palette";
+$blue-grey-light: map-merge($color-blue-grey, (
+  'default': '900'
+));
+$color-blue-grey: map-merge($color-blue-grey, ('contrastDefaultColor':  $light-contrast-color));
+$color-light-green: map-merge($color-light-green, ('contrastDefaultColor':  $light-contrast-color));
+
+// Import the rest of ember-paper.
+@import "ember-paper";
+
+
+.md-toolbar-tools {
+  //background-color: color($primary, '100');
+  background-color: #eff6f3;
+}
+
+$defaultThemeRaised: ".md-button.md-default-theme.md-raised";
+
+.button-sign-up#{$defaultThemeRaised} {
+  background-color: color($color-blue);
+  &:hover {
+    background-color: color($color-blue, '700');
+  }
+  &:focus {
+    background-color: color($color-blue);
+  }
+}
+
+.button-login#{$defaultThemeRaised} {
+  background-color: color($color-green);
+  &:hover {
+    background-color: color($color-green, '700');
+  }
+  &:focus {
+    background-color: color($color-green);
+  }
+}
