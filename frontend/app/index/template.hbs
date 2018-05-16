@@ -1,17 +1,36 @@
 {{!-- <h2>Test index trallala</h2>--}}
 {{#paper-toolbar as |toolbar|}}
- {{#toolbar.tools}}
-   {{#paper-item}}
-    <img  src="assets/images/quiz_db_small.png">
-   {{/paper-item}}
-   <span class="flex"></span>
-   {{#paper-button class="button-login" raised=true}}
-     Login
-   {{/paper-button}}
-   {{#paper-button class="button-sign-up" raised=true}}
-     Sign up
-   {{/paper-button}}
- {{/toolbar.tools}}
+  {{#toolbar.tools}}
+    {{#paper-item}}
+      <img  src="assets/images/quiz_db_small.png">
+    {{/paper-item}}
+    <span class="flex"></span>
+    <div class="layout-row hide show-xs">
+      {{#paper-menu as |menu|}}
+        {{#menu.trigger}}
+          {{#paper-button class="nav-bar-burger" noInk=true iconButton=true}}
+            {{paper-icon "menu"}}
+          {{/paper-button}}
+        {{/menu.trigger}}
+        {{#menu.content width=3 as |content|}}
+          {{#content.menu-item onClick="openSomething" disabled=true}}
+            <a class="anchor anchor-login">login</a>
+          {{/content.menu-item}}
+          {{#content.menu-item onClick="openSomething" disabled=true}}
+            <a class="anchor anchor-sign-up">sign up</a>
+          {{/content.menu-item}}
+        {{/menu.content}}
+      {{/paper-menu}}
+    </div>
+    <div class="layout-row hide-xs">
+      {{#paper-button class="button-login" raised=true}}
+        Login
+      {{/paper-button}}
+      {{#paper-button class="button-sign-up" raised=true}}
+        Sign up
+      {{/paper-button}}
+    </div>
+  {{/toolbar.tools}}
 {{/paper-toolbar}}
 
 
@@ -24,7 +43,9 @@
     <p>This is a collaborative storage for quiz questions.
       Anyone can attribue by adding/altering questions for
       quizes and other quiz related applications. To
-      participate in the project please login or sign up
+      participate in the project please
+      <a class="anchor anchor-login">login</a> or
+      <a class="anchor anchor-sign-up">sign up</a>
       to create a new account.
       #B9FFFF
       #FFE8CF

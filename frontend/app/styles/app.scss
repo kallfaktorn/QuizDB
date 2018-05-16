@@ -27,14 +27,42 @@ $color-light-green: map-merge($color-light-green, ('contrastDefaultColor':  $lig
 }
 
 $defaultThemeRaised: ".md-button.md-default-theme.md-raised";
-
+$defaultThemeIcon: ".paper-icon.md-font.material-icons.md-default-theme.ember-view";
+$defaultFocusedThemeButton: ".md-focused.md-default-theme.md-button.md-icon-button.ember-view";
 .button-sign-up#{$defaultThemeRaised} {
   background-color: color($color-blue);
   &:hover {
-    background-color: color($color-blue, '700');
+    background-color: color($color-blue, 'A400');
   }
   &:focus {
     background-color: color($color-blue);
+  }
+}
+.nav-bar-burger#{$defaultFocusedThemeButton} {
+  background-color: transparent;
+}
+.nav-bar-burger #{$defaultThemeIcon} {
+  color: color($shades, 'black');
+}
+.anchor {
+  cursor: pointer;
+}
+.anchor-login {
+  color: color($color-green);
+  &:hover {
+    color: color($color-green, '900');
+  }
+  &:focus {
+    color: color($color-green);
+  }
+}
+.anchor-sign-up {
+  color: color($color-blue);
+  &:hover {
+    color: color($color-blue, '900');
+  }
+  &:focus {
+    color: color($color-blue);
   }
 }
 
