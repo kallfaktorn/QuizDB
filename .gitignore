@@ -7,3 +7,10 @@ frontend/.gitignore
 frontend/app/helpers/.gitkeep
 frontend/app/controllers/.gitkeep
 frontend/app/components/.gitkeep
+frontend/app/routes/.gitkeep
+frontend/app/models/.gitkeep
+frontend/app/templates/components/.gitkeep
+frontend/vendor/.gitkeep
+frontend/tests/unit/.gitkeep
+frontend/tests/integration/.gitkeep
+frontend/tests/helpers/.gitkeep
