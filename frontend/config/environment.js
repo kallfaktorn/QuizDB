@@ -6,6 +6,7 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -23,7 +24,27 @@ module.exports = function(environment) {
     }
   };
 
+  ENV.contentSecurityPolicy = {
+    "base-uri": "'self'",
+    "connect-src": "'self'",
+    "default-src": "'self'",
+    "font-src": "'self'",
+    "frame-ancestors": "'self'",
+    "frame-src": "'self'",
+    "img-src": "'self'",
+    "manifest-src": "'self'",
+    "media-src": "'self'",
+    "object-src": "'self'",
+    "script-src": "'self'",
+    "style-src": "'self'"
+  };
+
+
+
   if (environment === 'development') {
+    console.log('envirionemnt dev')
+    console.log(environment)
+    ENV.apiHost = 'http://localhost:3000';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -32,6 +53,10 @@ module.exports = function(environment) {
   }
 
   if (environment === 'test') {
+    console.log('envirionemnt test')
+    console.log(environment)
+
+    ENV.apiHost = 'http://localhost:3000';
     // Testem prefers this...
     ENV.locationType = 'none';
 
@@ -42,6 +67,8 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
     ENV.APP.autoboot = false;
   }
+
+  ENV.contentSecurityPolicy['connect-src'] += ' ' + ENV.apiHost;
 
   if (environment === 'production') {
     // here you can enable a production-specific feature

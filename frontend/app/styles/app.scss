@@ -1,12 +1,16 @@
 // app.scss
 
 // Define desired color palettes.
-$primary: "blue-grey";
-$accent: "light-green";
-$warn: "pink";
+
+$black: rgba(0, 0, 0, 0) !default;
+
+$primary: "grey";
+$accent: "green";
+$warn: "green";
 
 $login: "green";
 $signUp: "blue";
+$back: "orange";
 
 
 // If desired, import the palettes and modify to your liking.
@@ -24,20 +28,15 @@ $color-light-green: map-merge($color-light-green, ('contrastDefaultColor':  $lig
 .md-toolbar-tools {
   //background-color: color($primary, '100');
   background-color: #eff6f3;
+
+  a {
+    font-size: 0;
+  }
 }
 
 $defaultThemeRaised: ".md-button.md-default-theme.md-raised";
 $defaultThemeIcon: ".paper-icon.md-font.material-icons.md-default-theme.ember-view";
 $defaultFocusedThemeButton: ".md-focused.md-default-theme.md-button.md-icon-button.ember-view";
-.button-sign-up#{$defaultThemeRaised} {
-  background-color: color($color-blue);
-  &:hover {
-    background-color: color($color-blue, 'A400');
-  }
-  &:focus {
-    background-color: color($color-blue);
-  }
-}
 .nav-bar-burger#{$defaultFocusedThemeButton} {
   background-color: transparent;
 }
@@ -65,6 +64,15 @@ $defaultFocusedThemeButton: ".md-focused.md-default-theme.md-button.md-icon-butt
     color: color($color-blue);
   }
 }
+.anchor-back {
+  color: color($color-orange);
+  &:hover {
+    color: color($color-orange, '900');
+  }
+  &:focus {
+    color: color($color-orange);
+  }
+}
 
 .button-login#{$defaultThemeRaised} {
   background-color: color($color-green);
@@ -73,5 +81,30 @@ $defaultFocusedThemeButton: ".md-focused.md-default-theme.md-button.md-icon-butt
   }
   &:focus {
     background-color: color($color-green);
+  }
+}
+.button-sign-up#{$defaultThemeRaised} {
+  background-color: color($color-blue);
+  &:hover {
+    background-color: color($color-blue, 'A400');
+  }
+  &:focus {
+    background-color: color($color-blue);
+  }
+}
+.button-back#{$defaultThemeRaised} {
+  background-color: color($color-orange);
+  &:hover {
+    background-color: color($color-orange, 'A400');
+  }
+  &:focus {
+    background-color: color($color-orange);
+  }
+}
+
+
+body.login, body.sign-up {
+  .layout-row.flex {
+    height: 100px;
   }
 }

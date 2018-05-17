@@ -1,7 +1,8 @@
+{{!-- <h2>Test index trallala</h2>--}}
 {{#paper-toolbar as |toolbar|}}
   {{#toolbar.tools}}
     {{#paper-item}}
-      <a href="/"><img  src="assets/images/quiz_db_small.png"></a>
+      <a href="/"><img src="assets/images/quiz_db_small.png"></a>
     {{/paper-item}}
     <span class="flex"></span>
     <div class="layout-row hide show-xs">
@@ -13,47 +14,39 @@
         {{/menu.trigger}}
         {{#menu.content width=3 as |content|}}
           {{#content.menu-item onClick="openSomething" disabled=true}}
-            {{link-login}}
+            {{link-sign-up}}
           {{/content.menu-item}}
           {{#content.menu-item onClick="openSomething" disabled=true}}
-            {{link-sign-up}}
+            {{link-back}}
           {{/content.menu-item}}
         {{/menu.content}}
       {{/paper-menu}}
     </div>
     <div class="layout-row hide-xs">
-      {{button-login}}
       {{button-sign-up}}
+      {{button-back}}
     </div>
   {{/toolbar.tools}}
 {{/paper-toolbar}}
 
-
+<div class="layout-row flex"></div>
 <div class="layout-row layout-align-center-center">
-  <div class="flex-10 flex-gt-sm-30"></div>
-  <div>
-    <br />
-    <br />
-    <h2 class="">Welcome to QuizDB</h2>
-    <p>This is a collaborative storage for quiz questions.
-      Anyone can attribue by adding/altering questions for
-      quizes and other quiz related applications. To
-      participate in the project please
-      {{link-login}} or
-      {{link-sign-up}}
-    </p>
+  <div class="flex-10 flex-gt-sm-35"></div>
+  <div class="layout-column flex">
+    {{paper-input label="Username" value=username onChange=(action (mut username))}}
+    {{paper-input label="Password" type="password" value=password onChange=(action (mut password))}}
   </div>
-  <div class="flex-10 flex-gt-sm-30"></div>
+  <div class="flex-10 flex-gt-sm-35"></div>
 </div>
 <div class="layout-row layout-align-left-center">
-  <div class="flex-10 flex-gt-sm-30"></div>
+  <div class="flex-10 flex-gt-sm-35"></div>
   <div>
-    <br />
-    <br />
     <div class="layout-row">
-      {{button-login}}
-      {{button-sign-up}}
+      {{#paper-button onClick=(action "authenticate") class="button-login" raised=true}}
+        Login
+      {{/paper-button}}
+      {{button-back}}
     </div>
   </div>
-  <div class="flex-10 flex-gt-sm-30"></div>
+  <div class="flex-10 flex-gt-sm-35"></div>
 </div>
