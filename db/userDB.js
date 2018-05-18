@@ -9,7 +9,15 @@ exports.findAll = function(res) {
       db.close();
     } )
 };
-exports.findById = function() {};
-exports.add = function() {};
+exports.findById = function(req, res) {
+  console.log('da req');
+  console.log(req.payload);
+};
+exports.add = function(req, res) {
+  console.log('da req');
+  console.log(req.body);
+  console.log(req.data);
+  console.log(req.payload);
+};
 exports.update = function() {};
 exports.delete = function() {};

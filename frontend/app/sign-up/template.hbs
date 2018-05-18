@@ -1,4 +1,5 @@
 {{!-- <h2>Test index trallala</h2>--}}
+{{!--
 {{#paper-toolbar as |toolbar|}}
   {{#toolbar.tools}}
     {{#paper-item}}
@@ -52,3 +53,22 @@
   </div>
   <div class="flex-10 flex-gt-sm-35"></div>
 </div>
+--}}
+
+<form {{action "onSignUp" email password on="submit"}}>
+  <div>
+    <label>Username</label>
+    {{input type="username" value=username}}
+  </div>
+  <div>
+    <label>Email</label>
+    {{input type="email" value=email}}
+  </div>
+  <div>
+    <label>Password</label>
+    {{input type="password" value=password}}
+  </div>
+  <button type="submit">Sign Up</button>
+</form>
+
+username

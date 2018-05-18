@@ -6,6 +6,7 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+    apiNamespace: 'api',
 
     EmberENV: {
       FEATURES: {
@@ -26,7 +27,7 @@ module.exports = function(environment) {
 
   ENV.contentSecurityPolicy = {
     "base-uri": "'self'",
-    "connect-src": "'self'",
+    "connect-src": "'self' 'localhost:3000'",
     "default-src": "'self'",
     "font-src": "'self'",
     "frame-ancestors": "'self'",
@@ -68,7 +69,7 @@ module.exports = function(environment) {
     ENV.APP.autoboot = false;
   }
 
-  ENV.contentSecurityPolicy['connect-src'] += ' ' + ENV.apiHost;
+//  ENV.contentSecurityPolicy['connect-src'] = ['self', 'localhost:4200'];
 
   if (environment === 'production') {
     // here you can enable a production-specific feature

@@ -1,7 +1,8 @@
 import Controller from '@ember/controller';
+import { inject } from '@ember/service';
 
 export default Controller.extend({
-  ajax: Ember.inject.service(),
+  ajax: inject.service(),
 
   actions: {
     login: function() {
@@ -11,7 +12,7 @@ export default Controller.extend({
       console.log(this.get('password'));
     },
     authenticate: function() {
-      var that = this;
+      //var that = this;
       //var applicationController = that.get('controllers.application');
       const requestObject = {
         username: this.get('username'),
