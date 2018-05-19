@@ -10,6 +10,9 @@ Router.map(function() {
   this.route('index', { path: '/' });
   this.route('login', { path: '/login' });
   this.route('sign-up', { path: '/sign-up' });
+  this.route('authenticated', { path: '/a' }, function() {
+    // all routes that require the session to be authenticated
+  });
 });
 
 export default Router;

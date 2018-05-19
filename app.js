@@ -17,6 +17,12 @@ server.listen(port, hostname, () => {
 var express = require('express');
 var bodyParser = require('body-parser')
 var app = express();
+var passport = require('passport')
+  , OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
+
+let userDB = require('./db/userDB');
+
+
 
 // Add headers
 app.use(function (req, res, next) {
@@ -25,7 +31,7 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
 
     // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
 
     // Request headers you wish to allow
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');

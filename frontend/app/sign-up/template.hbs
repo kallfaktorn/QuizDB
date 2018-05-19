@@ -55,7 +55,7 @@
 </div>
 --}}
 
-<form {{action "onSignUp" email password on="submit"}}>
+<form {{action "onSignUp" username email password on="submit"}}>
   <div>
     <label>Username</label>
     {{input type="username" value=username}}
@@ -70,5 +70,3 @@
   </div>
   <button type="submit">Sign Up</button>
 </form>
-
-username

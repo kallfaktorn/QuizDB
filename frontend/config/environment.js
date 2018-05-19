@@ -41,7 +41,6 @@ module.exports = function(environment) {
   };
 
 
-
   if (environment === 'development') {
     console.log('envirionemnt dev')
     console.log(environment)

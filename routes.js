@@ -1,12 +1,13 @@
 module.exports = function(app){
 
-    
     // Session
-    //var sessions = require('./controllers/sessionsEndpoint');
+    var sessions = require('./controllers/sessionEndpoint');
     app.post('/login', function(req, res) {
-      console.log('login req')
-      console.log(req)
-    })
+    });
+
+
+    app.post('/api/token', sessions.createToken);
+
 
     // Users
     var users = require('./controllers/userEndpoint');

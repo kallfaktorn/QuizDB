@@ -4,8 +4,9 @@ exports.findAll = function(req, res) {
   console.log('finding users here');
   userDB.findAll(res);
 };
-exports.findById = function() {
+exports.findById = function(req, res) {
   console.log('finding user here');
+  userDB.findAll(req, res);
 };
 exports.add = function(req, res) {
   console.log('adding user here');
