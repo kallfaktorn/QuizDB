@@ -1,5 +1,5 @@
 {{!-- <h2>Test index trallala</h2>--}}
-{{!--
+
 {{#paper-toolbar as |toolbar|}}
   {{#toolbar.tools}}
     {{#paper-item}}
@@ -31,30 +31,38 @@
 {{/paper-toolbar}}
 
 <div class="layout-row flex"></div>
-<div class="layout-row layout-align-center-center">
-  <div class="flex-10 flex-gt-sm-35"></div>
-  <div class="layout-column flex">
-    {{paper-input label="Username" value=username onChange=(action (mut username))}}
-    {{paper-input label="Email" value=email onChange=(action (mut email))}}
-    {{paper-input label="Password" type="password" value=password onChange=(action (mut password))}}
-    {{paper-input label="Confirm password" type="password" value=confirmPassword onChange=(action (mut confirmPassword))}}
-  </div>
-  <div class="flex-10 flex-gt-sm-35"></div>
-</div>
-<div class="layout-row layout-align-left-center">
-  <div class="flex-10 flex-gt-sm-35"></div>
-  <div>
-    <div class="layout-row">
-      {{#paper-button onClick=(action "login") class="button-sign-up" raised=true}}
-        Sign up
-      {{/paper-button}}
-      {{button-back}}
-    </div>
-  </div>
-  <div class="flex-10 flex-gt-sm-35"></div>
-</div>
---}}
 
+{{#paper-form onSubmit=(action "signUp" username email password confirmPassword) as |form|}}
+  <div class="layout-row layout-align-center-center">
+    <div class="flex-10 flex-gt-sm-35"></div>
+    <div class="layout-column flex">
+      {{form.input label="Username" value=username onChange=(action (mut username)) required=true}}
+      {{form.input label="Email" value=email onChange=(action (mut email)) required=true}}
+      {{form.input label="Password" type="password" value=password onChange=(action (mut password)) required=true}}
+      {{form.input label="Confirm password" type="password" value=confirmPassword onChange=(action (mut confirmPassword)) required=true}}
+    </div>
+    <div class="flex-10 flex-gt-sm-35"></div>
+  </div>
+  <div class="layout-row layout-align-left-center">
+    <div class="flex-10 flex-gt-sm-35"></div>
+    <div>
+      <div class="layout-row">
+        {{#form.submit-button raised=true primary=true class="button-sign-up" disabled=form.isInvalid}}
+          Submit
+        {{/form.submit-button}}
+        {{!-- {{#paper-button onClick=(action "login") class="button-sign-up" raised=true}}
+          Sign up
+        {{/paper-button}}--}}
+        {{button-back}}
+      </div>
+    </div>
+    <div class="flex-10 flex-gt-sm-35"></div>
+  </div>
+{{/paper-form}}
+
+
+
+{{!--
 <form {{action "onSignUp" username email password on="submit"}}>
   <div>
     <label>Username</label>
@@ -70,3 +78,4 @@
   </div>
   <button type="submit">Sign Up</button>
 </form>
+--}}

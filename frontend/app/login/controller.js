@@ -1,8 +1,8 @@
 import Controller from '@ember/controller';
-import { inject } from '@ember/service';
+import { inject as service } from '@ember/service';
 
 export default Controller.extend({
-  ajax: inject.service(),
+  ajax: service(),
 
   actions: {
     login: function() {
