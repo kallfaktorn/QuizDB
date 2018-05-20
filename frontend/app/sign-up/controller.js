@@ -19,7 +19,7 @@ export default Controller.extend({
        let session = that.get('session');
        session.authenticate(AUTHENTICATOR, username, password).then(function(result) {
          console.log('authentication successful');
-          that.transitionToRoute("authenticated");
+          that.transitionToRoute("a.index");
        }, function(err) {
          console.log('authentication failed reason:');
          console.log(err);

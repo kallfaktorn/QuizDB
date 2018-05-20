@@ -9,6 +9,7 @@ $accent: "green";
 $warn: "green";
 
 $login: "green";
+$logout: "red";
 $signUp: "blue";
 $back: "orange";
 
@@ -55,6 +56,15 @@ $defaultFocusedThemeButton: ".md-focused.md-default-theme.md-button.md-icon-butt
     color: color($color-green);
   }
 }
+.anchor-logout {
+  color: color($color-red);
+  &:hover {
+    color: color($color-red, '900');
+  }
+  &:focus {
+    color: color($color-red);
+  }
+}
 .anchor-sign-up {
   color: color($color-blue);
   &:hover {
@@ -74,6 +84,7 @@ $defaultFocusedThemeButton: ".md-focused.md-default-theme.md-button.md-icon-butt
   }
 }
 
+
 .button-login#{$defaultThemeRaised} {
   background-color: color($color-green);
   &:hover {
@@ -81,6 +92,15 @@ $defaultFocusedThemeButton: ".md-focused.md-default-theme.md-button.md-icon-butt
   }
   &:focus {
     background-color: color($color-green);
+  }
+}
+.button-logout#{$defaultThemeRaised} {
+  background-color: color($color-red);
+  &:hover {
+    background-color: color($color-red, '700');
+  }
+  &:focus {
+    background-color: color($color-red);
   }
 }
 .button-sign-up#{$defaultThemeRaised} {

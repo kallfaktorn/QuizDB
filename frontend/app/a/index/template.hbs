@@ -1,1 +1,29 @@
-<h2>Test olala</h2>
+{{#paper-toolbar as |toolbar|}}
+  {{#toolbar.tools}}
+    {{#paper-item}}
+      <a href="/"><img src="/assets/images/quiz_db_small.png"></a>
+    {{/paper-item}}
+    <span class="flex"></span>
+    <div class="layout-row hide show-xs">
+      {{#paper-menu as |menu|}}
+        {{#menu.trigger}}
+          {{#paper-button class="nav-bar-burger" noInk=true iconButton=true}}
+            {{paper-icon "menu"}}
+          {{/paper-button}}
+        {{/menu.trigger}}
+        {{#menu.content width=3 as |content|}}
+          {{#content.menu-item onClick="openSomething" disabled=true}}
+            {{link-sign-up}}
+          {{/content.menu-item}}
+          {{#content.menu-item onClick="openSomething" disabled=true}}
+            {{link-logout}}
+          {{/content.menu-item}}
+        {{/menu.content}}
+      {{/paper-menu}}
+    </div>
+    <div class="layout-row hide-xs">
+      {{button-sign-up}}
+      {{button-logout}}
+    </div>
+  {{/toolbar.tools}}
+{{/paper-toolbar}}
