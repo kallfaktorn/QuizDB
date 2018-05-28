@@ -3,11 +3,10 @@ import { inject as service } from '@ember/service';
 
 export default Component.extend({
   router: service(),
-  session: service(),
 
   actions: {
-    signUp: function() {
-      this.get('router').transitionTo('sign-up');
+    addQuestion: function() {
+      this.get('router').transitionTo('a.questions.add');
     }
   }
 });

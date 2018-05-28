@@ -6,6 +6,21 @@ const AUTHENTICATOR = 'authenticator:oauth2';
 export default Controller.extend({
   session: service(),
 
+  init: function() {
+    this.addOne();
+  },
+
+  addOne: function() {
+    let that = this;
+    $( document ).one( "keypress", function(event) {
+      if(event.which == 13) {
+          that.send('authenticate');
+      } else {
+        that.addOne();
+      }
+    });
+  },
+
   actions: {
     authenticate() {
       let that = this;
@@ -13,7 +28,9 @@ export default Controller.extend({
       this.get('session').authenticate(AUTHENTICATOR, username, password).then(function(result) {
         that.transitionToRoute("a.index");
       }, function(err) {
-        this.set('errorMessage', reason.error || reason);
+        console.log('Authentification failed');
+        console.log(err);
+        that.set('errorMessage', err);
       });
     }
   }

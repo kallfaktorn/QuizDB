@@ -121,6 +121,15 @@ $defaultFocusedThemeButton: ".md-focused.md-default-theme.md-button.md-icon-butt
     background-color: color($color-orange);
   }
 }
+.button-add-question#{$defaultThemeRaised} {
+  background-color: color($color-green);
+  &:hover {
+    background-color: color($color-green, 'A400');
+  }
+  &:focus {
+    background-color: color($color-green);
+  }
+}
 
 
 body.login, body.sign-up {

@@ -13,7 +13,7 @@
         {{/menu.trigger}}
         {{#menu.content width=3 as |content|}}
           {{#content.menu-item onClick="openSomething" disabled=true}}
-            {{link-sign-up}}
+            {{link-back}}
           {{/content.menu-item}}
           {{#content.menu-item onClick="openSomething" disabled=true}}
             {{link-logout}}
@@ -22,7 +22,7 @@
       {{/paper-menu}}
     </div>
     <div class="layout-row hide-xs">
-      {{button-add-question}}
+      {{button-back}}
       {{button-logout}}
     </div>
   {{/toolbar.tools}}
